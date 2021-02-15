@@ -27,6 +27,12 @@ Reservation (contains an estimate form for the amount to be paid according to th
 <li>calculate the price estimate according to the criteria entered</li>
 </ul>
 
+<br>
+
+<img src="images/calculations.jpg">
+
+<br>
+
 ## conditions :
 
 <ul>
