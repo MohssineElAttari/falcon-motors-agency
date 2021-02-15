@@ -1,0 +1,60 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid currentColor;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.35s ease-in-out;
+  font-weight: $bold-weight;
+
+  .icon--reserve {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 5px;
+  }
+}
+.btn--reserve {
+  padding: 0.5rem 1.5rem;
+  color: $primary-color !important;
+  border-color: currentColor;
+  .icon--reserve {
+    fill: $primary-color;
+  }
+}
+
+.btn-white {
+  color: $gray-light-color;
+  border-color: currentColor;
+  .icon-white {
+    fill: white;
+    margin-right: 0.5rem;
+  }
+}
+.header-btns {
+  .btn {
+    width: 17.5rem;
+    margin-top: 2.5rem;
+  }
+}
+.category-info {
+  .btn {
+    color: $primary-color;
+    padding: 1rem 3.5rem;
+    border-radius: 50rem;
+    fill: $primary-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+.category-btn {
+  svg {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: inherit;
+  }
+}

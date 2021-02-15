@@ -1,0 +1,24 @@
+.social-media-box {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: -2.5vw;
+  top: 50%;
+  transform: rotate(270deg);
+  a {
+    box-sizing: content-box;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50rem;
+    border: 2px solid $primary-color;
+    padding: 1.5rem;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: $primary-color;
+  }
+}
