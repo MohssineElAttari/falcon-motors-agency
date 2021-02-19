@@ -131,9 +131,9 @@ export const all = [
     type: "construction machine",
   },
   {
-    name: "volvo VNL Truck",
-    company: "volvo",
-    img_src: "../images/All/14.png",
+    name: "Hino canada Truck",
+    company: "Hino",
+    img_src: "../images/All/17.png",
     power: "Diesel",
     price: 165,
     type: "truck",

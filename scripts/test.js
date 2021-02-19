@@ -187,15 +187,3 @@ const total_bill = (days, Element) => {
     : Element.price * (Element.taxPower * days);
   return Element.total__bill;
 };
-console.log(total_bill(1, all[0]));
-
-const clickShowItem = (clickedItem, Items, event_type) => {
-  clickedItem.addEventListener(event_type, () => {
-    Items.forEach((element) => {
-      let reservation_box = document.querySelector(".reservation-box");
-      reservation_box.innerHTML = "";
-      let Div_Motor = (document.createElement("div".lis"motor_img";
-      console.log(
-        "🚀 ~ file: reservation.js ~ line 77 ~ Items.forEach ~ Div_Motor",
-        Div_Motor
-      );

@@ -68,104 +68,130 @@ const total_bill = (days, Element) => {
   return Element.total__bill;
 };
 
+// function for fill categories :
 const clickShowItem = (clickedItem, Items, event_type) => {
   clickedItem.addEventListener(event_type, () => {
+    // delete all items in reservation_box
+    let reservation_box = document.querySelector(".reservation-box");
+    reservation_box.innerHTML = "";
     Items.forEach((element) => {
-      let reservation_box = document.querySelector(".reservation-box");
-
-      // delete all items in reservation_box
-      reservation_box.innerHTML = "";
+      //create node motor div :
       let Div_Motor = document.createElement("div");
       Div_Motor.className = "motor";
+
+      // fill div_img node :
       let create_img_div = document.createElement("div");
       create_img_div.className = "motor_img";
       let create_img = document.createElement("img");
       create_img.src = element.img_src;
       create_img_div.appendChild(create_img);
-      Div_Motor.appendChild(create_img_div);
-      reservation_box.appendChild(Div_Motor);
-      let create_motor_info_booking = document.createElement("div");
-      create_motor_info_booking.className = "motor_info_booking";
-      let create_ul = document.createElement("ul");
-      create_ul.className = "motor_infos";
-      let create_li_motor = document.createElement("li");
-      create_li_motor.className = "motor_name";
-      let create_li_price = document.createElement("li");
-      create_li_price.className = "motor_rent__price";
+
+      // create book_info_booking node :
+      let motor_info_booking = document.createElement("div");
+      motor_info_booking.className = "motor_info_booking";
+
+      // fill name node :
+      let li_motor_name = document.createElement("li");
+      li_motor_name.className = "motor_name";
+      li_motor_name.appendChild(document.createTextNode(element.name));
+
+      // fill price node :
+      let li_motor_price = document.createElement("li");
+      li_motor_price.className = "motor_rent__price";
+      let icon_price = document.createElement("svg");
+      icon_price.className = "icon-gallery";
+      let price_use = document.createElement("use");
+      price_use.setAttribute(
+        "xlink:href",
+        "../images/SVG/icons.svg#icon-credit-card"
+      );
+      icon_price.appendChild(price_use);
+      li_motor_price.appendChild(icon_price);
+      li_motor_price.appendChild(document.createTextNode(element.price));
+
+      // fill company name node :
       let li_motor_company = document.createElement("li");
       li_motor_company.className = "motor_company";
-      let li_motor_power = document.createElement("li");
-      li_motor_power.className = "motor_power";
-      let li_motor_type = document.createElement("li");
-      li_motor_type.className = "motor_type";
-      let icon_price = document.createElement("svg");
-      let price_use = document.createElement("use");
-      price_use.setAttribute("xlink:href", "../images/SVG/icons.svg#icon-map2");
-      icon_price.className = "icon-gallery";
       let icon_com = document.createElement("svg");
+      icon_com.className = "icon-gallery";
       let com_use = document.createElement("use");
       com_use.setAttribute("xlink:href", "../images/SVG/icons.svg#icon-map2");
       icon_com.appendChild(com_use);
-      icon_com.className = "icon-gallery";
+      li_motor_company.appendChild(icon_com);
+      li_motor_company.appendChild(document.createTextNode(element.company));
+
+      // fill power node :
+      let li_motor_power = document.createElement("li");
+      li_motor_power.className = "motor_power";
       let icon_power = document.createElement("svg");
       icon_power.className = "icon-gallery";
+      let power_use = document.createElement("use");
+      power_use.setAttribute("xlink:href", "../images/SVG/icons.svg#icon-map2");
+      icon_power.appendChild(power_use);
+      li_motor_power.appendChild(icon_power);
+      li_motor_power.appendChild(document.createTextNode(element.power));
+
+      // fill type node :
+      let li_motor_type = document.createElement("li");
+      li_motor_type.className = "motor_type";
       let icon_info = document.createElement("svg");
       icon_info.className = "icon-gallery";
-      let create_use = document.createElement("use");
-      let create_a_btn = document.createElement("a");
-      create_a_btn.className = "btn btn--reserve btn--reserve-section";
-      icon_price.appendChild(price_use);
-      // let create_map = icon_gallery.appendChild(
-      //   create_use.setAttribute(
-      //     "xlink:href",
-      //     "../images/SVG/icons.svg#icon-map2"
-      //   )
-      // );
-      // let create_power = icon_gallery.appendChild(
-      //   create_use.setAttribute(
-      //     "xlink:href",
-      //     "../images/SVG/icons.svg#icon-power"
-      //   )
-      // );
-      // let create_info = icon_gallery.appendChild(
-      //   create_use.setAttribute(
-      //     "xlink:href",
-      //     "../images/SVG/icons.svg#icon-info"
-      //   )
-      // );
-      // let create_arrow = icon_gallery.appendChild(
-      //   create_use.setAttribute(
-      //     "xlink:href",
-      //     "../images/SVG/icons.svg#icon-arrow-right2"
-      //   )
-      // );
-
-      // fill empty elements :
-      li_name.innerHTML = element.name;
-      li_motor_price.appendChild(create_card);
-      li_motor_price.appendChild(document.createTextNode(element.price));
-      li_motor_power.appendChild(create_power);
-      li_motor_power.appendChild(document.createTextNode(element.power));
-      li_motor_type.appendChild(create_info);
+      let info_use = document.createElement("use");
+      info_use.setAttribute("xlink:href", "../images/SVG/icons.svg#icon-info");
+      icon_info.appendChild(info_use);
+      li_motor_type.appendChild(icon_info);
       li_motor_type.appendChild(document.createTextNode(element.type));
-      li_motor_company.appendChild(create_map);
-      li_motor_company.appendChild(document.createTextNode(element.company));
-      create_btn_anchor.appendChild(document.createTextNode("Reserve Now"));
-      create_btn_anchor.appendChild(create_arrow);
-      parent_div.appendChild(Create_img_div);
-      parent_div.appendChild(motor_info_booking);
-      reservation_box.appendChild(parent_div);
+
+      // fill btn reservation :
+      let btn_reservation = document.createElement("a");
+      btn_reservation.className = "btn btn--reserve btn--reserve-section";
+      let icon_btn = document.createElement("svg");
+      icon_btn.className = "icon--reserve";
+      let use_btn = document.createElement("use");
+      use_btn.setAttribute(
+        "xlink:href",
+        "../images/SVG/icons.svg#icon-arrow-right2"
+      );
+      btn_reservation.appendChild(document.createTextNode("Reserve now"));
+      icon_btn.appendChild(use_btn);
+      btn_reservation.appendChild(icon_btn);
+
+      // fill ul from li :
+      let ul = document.createElement("ul");
+      ul.className = "motor_infos";
+      ul.appendChild(li_motor_name);
+      ul.appendChild(li_motor_price);
+      ul.appendChild(li_motor_company);
+      ul.appendChild(li_motor_power);
+      ul.appendChild(li_motor_type);
+
+      //fill motor_info_booking :
+      motor_info_booking.appendChild(ul);
+      motor_info_booking.appendChild(btn_reservation);
+      Div_Motor.appendChild(create_img_div);
+      Div_Motor.appendChild(motor_info_booking);
+      reservation_box.appendChild(Div_Motor);
+      console.log(Div_Motor);
     });
   });
 };
-clickShowItem(
-  document.querySelector(
-    "body > section.section-reservation > ul > li.type.motorcycle"
-  ),
-  all,
-  "click"
-);
 
+console.log(all[7]);
 console.log(total_bill(10, all[7]));
 console.log(all[7]);
+
+// random object in data file :
 const random_all = all.sort(() => Math.random() - 0.1);
+
+// events in reservation section :
+clickShowItem(window, random_all, "load");
+clickShowItem(document.querySelector(".motorcycle"), motorcycle, "click");
+clickShowItem(document.querySelector(".cityCar"), city_car, "click");
+clickShowItem(document.querySelector(".sedan"), sedan, "click");
+clickShowItem(document.querySelector(".SUVcar"), SUV, "click");
+clickShowItem(
+  document.querySelector(".construction_machine"),
+  constructMachine,
+  "click"
+);
+clickShowItem(document.querySelector(".truck"), truck, "click");
