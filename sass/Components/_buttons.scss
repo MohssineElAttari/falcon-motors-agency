@@ -1,4 +1,5 @@
 .btn {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   border: 2px solid currentColor;
@@ -8,6 +9,10 @@
   text-transform: capitalize;
   transition: all 0.35s ease-in-out;
   font-weight: $bold-weight;
+  background: none;
+  outline: none;
+  font-size: 1.8rem;
+  font-family: inherit;
 
   .icon--reserve {
     margin-left: 0.5rem;
@@ -15,22 +20,24 @@
     height: 1.5rem;
     margin-top: 5px;
   }
-}
-.btn--reserve {
-  padding: 0.5rem 1.5rem;
-  color: $primary-color !important;
-  border-color: currentColor;
-  .icon--reserve {
-    fill: $primary-color;
-  }
-}
 
-.btn-white {
-  color: $gray-light-color;
-  border-color: currentColor;
-  .icon-white {
-    fill: white;
-    margin-right: 0.5rem;
+  &--reserve {
+    padding: 0.5rem 1.5rem;
+    color: $primary-color !important;
+    border-color: currentColor;
+    .icon--reserve {
+      fill: $primary-color;
+    }
+  }
+
+  &-white {
+    color: $gray-light-color;
+    border-color: currentColor;
+    fill: $gray-light-color;
+    .icon-white {
+      fill: white;
+      margin-right: 0.5rem;
+    }
   }
 }
 .header-btns {
@@ -56,5 +63,53 @@
     width: 2rem;
     height: 2rem;
     fill: inherit;
+  }
+}
+
+.submit-form {
+  color: $primary-color;
+  padding: 0.5rem 1.5rem;
+  fill: $primary-color;
+  &:hover {
+    color: $secondary-color;
+    fill: $secondary-color;
+  }
+}
+.local-addresses {
+  .submit-form {
+    margin: 2.5rem 0;
+  }
+}
+
+.popup .input__group-button {
+  .confirm-btn {
+    color: $gray-light-color;
+    background-color: $primary-color;
+    fill: $gray-light-color;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+  .cancel-btn {
+    color: $gray-light-color;
+    fill: $gray-light-color;
+    &:hover {
+      color: $gray-color;
+      fill: $gray-color;
+    }
+  }
+}
+.motor {
+  .btn--reserve-section {
+    align-self: center;
+    svg {
+      transition: all 0.35s ease-in-out;
+    }
+    &:hover {
+      color: $secondary-color !important;
+      svg {
+        fill: $secondary-color !important;
+      }
+    }
   }
 }

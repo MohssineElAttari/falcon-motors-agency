@@ -6,6 +6,7 @@
   top: 50%;
   transform: rotate(270deg);
   a {
+    transform: rotate(90deg);
     box-sizing: content-box;
     display: inline-block;
     text-decoration: none;
@@ -21,4 +22,25 @@
     height: 100%;
     fill: $primary-color;
   }
+}
+.btn-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 1rem;
+  initial-letter: inherit;
+}
+.local-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  fill: $primary-color;
+  margin-right: 1.5rem;
+}
+.popUp-icon {
+  fill: $secondary-color;
+  margin-bottom: 2.5rem;
+}
+.icon-gallery {
+  fill: $gray-light-color;
+  width: 2.5rem;
+  height: 2.5rem;
 }

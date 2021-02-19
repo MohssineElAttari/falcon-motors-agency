@@ -50,3 +50,30 @@ p {
 .bold-font {
   font-weight: bold;
 }
+.center-text {
+  text-align: center;
+}
+.p-medium-top {
+  padding: 5rem;
+}
+.white-link {
+  color: white;
+}
+.link {
+  text-decoration: none;
+}
+.local-address.white-link {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 1rem;
+  transition: all 0.25s ease-in-out;
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+}
+.third-heading.heading-line {
+  text-align: start;
+  padding-bottom: 4.5rem;
+  &::before {
+    width: 14.25rem;
+  }
+}
